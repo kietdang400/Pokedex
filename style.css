@@ -5,23 +5,48 @@ body{
     background-color: rgb(198, 53, 53);
 }
 
+header{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: xx-large;
+        color:white;
+        margin-bottom: 1%;
+}
+header h1{
+    position:relative;
+    left:17%;
+}
+
+.pokeball-container{
+    position:relative;
+    top: 100px;
+    left:7.5%;
+}
+
+.pokeball-container img{
+    width:5%;
+    height: 5%;
+}
 
 .form-container{
     display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-            top: 450px;
-            left:-23%;
+            top: 370px;
+            left:-19.3%;
+         
 }
 
 .form-container #pokemon-name{
-    width:500%;
+    width:300%;
     border-radius: 25px;
-        border: 2px solid #609;
+        border: 7px solid #609;
         padding: 20px;
     font-family: 'Pokemon Solid',
         sans-serif ;
+        font-size: larger;
 }
 
 .form-container .submit-container{
@@ -39,38 +64,54 @@ body{
     border-radius: 25px;
     border: 2px solid black;
     background-color:rgb(10, 255, 10);
+    position: relative;
+    left:-96%;
+    
 
 }
 
 
 
 
-
-
+/*Questionmark*/
+.body-pokemon .question-mark{
+    position:relative;
+    left:2.5%;
+}
 /*display pokemon*/
 .body-pokemon{
     display: flex;
         align-items: center;
         justify-content: center;
         position:relative;
-        left:-5%;
-        top:60px;
+        left:-3%;
+        top:-100px;
+}
+
+.container{
+    height: 70px;
+        width: 70px;
 }
 
 .body-pokemon img{
     width: 250px;
     position:relative;
-    top:-80px;
-   
+    top:-40px;
+    left:-50%;
+    animation: bounce 1s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+        animation-iteration-count: infinite;
+    
 }
 
 /*text types*/
 .body-pokemon .types{
     position:relative;
-    left:5%;
-    top:-100px;
+    left:393%;
+    top:-585px;
     text-align: center;
-    font-size: 200%;
+    font-size: 130%;
     color:white;
 }
 
@@ -78,9 +119,11 @@ body{
 .body-pokemon .names{
 position: relative;
 text-align: center;
-font-size:200%;
-top: -100px;
+font-size:130%;
+left: -250px;
+top: -370px;
 color: white;
+width:fit-content;
 
 }
 
@@ -88,3 +131,37 @@ h3{
     position:relative;
     top:-60px;
 }
+
+/*HP*/
+.hp{
+    position: relative;
+    top:-760%;
+   left: -100%;
+}
+/*Height*/
+.height{
+position: relative;
+    top: -990%;
+    left:75%;
+}
+/*Weight*/
+.weight{
+position: relative;
+    top: -1220%;
+    left:285%;
+}
+
+span{
+    position: relative;
+    top:100%;
+}
+/*animations*/
+  @keyframes bounce {
+      from {
+          transform: translate3d(0, 0, 0);
+      }
+
+      to {
+          transform: translate3d(0, 15px, 0);
+      }
+  }

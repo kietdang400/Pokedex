@@ -3,9 +3,9 @@ const input=document.querySelector('#pokemon-name');
 const submit=document.querySelector('input[type=submit]');
 const showPokemon=document.querySelector('.body-pokemon');
 const form=document.querySelector('form');
+const questionMark=document.querySelector('.question-mark');
 
-
-
+console.log(questionMark)
 
  form.addEventListener('submit',pokemon)
 
@@ -19,7 +19,7 @@ if(input.value.length===0){
 
 }
 
-    const description=await fetch(`https://pokeapi.co/api/v2/pokemon/${input.value}`);
+    const description=await fetch(`https://pokeapi.co/api/v2/pokemon/${input.value.toLowerCase()}`);
     const data=await description.json();
 
     const types=[];
@@ -31,29 +31,54 @@ for(let i=0;i<data.types.length;i++){
 
 
 showPokemon.innerHTML=`
+<div class='container'>
         <img
         src=${data.sprites.front_default}
         alt=""
         id="pokemon-picture"
       />
       <div class='names'>
-        <h1>
-          Name:
-          <h3>${data.species.name}</h3>
-        </h1>
+        <h2>
+          Name: <span>${data.species.name}</span>
+        </h2>
       </div>
       <div class='types'>
-        <h1>
+        <h2>
           Type:
-          <h3>${types.map((x)=>{return x;})}</h3> 
-        </h1>
+          <span>${types.map((x)=>{return x + '';})}</span> 
+        </h2>
+      </div>
+      <div class='hp'>
+      <h2>
+      HP:
+
+      <h3><span>${data.stats[0].base_stat}</span> </h3>
+
+      </h2>
+      </div>
+      <div class='height'>
+      <h2>
+      Height:
+      <h3>${data.height} ft</h3>
+      </h2>
+      </div>
+
+
+      <div class='weight lb'>
+      <h2>
+      Weight:
+      <h3>${data.weight} lb</h3>
+      </h2>
+      </div>
       </div>
       `;
 
 input.value='';
+questionMark.toggle();
 
-
-console.log(data)
+console.log(data.stats[0].stat.name)
+console.log(data.weight)
+console.log(data.attributes.pitch)
 };
 
 
