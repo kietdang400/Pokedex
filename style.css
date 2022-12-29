@@ -29,6 +29,11 @@ header h1{
     height: 5%;
 }
 
+#random{
+    background-color:transparent;
+    border: 0px;
+}
+
 .form-container{
     display: flex;
         align-items: center;
